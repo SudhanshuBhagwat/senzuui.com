@@ -2,8 +2,12 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {}
+    extend: {
+      maxWidth: {
+        "8xl": "90rem",
+      },
+    },
   },
   variants: {},
-  plugins: [require("@tailwindcss/typography")]
+  plugins: [require("@tailwindcss/typography")],
 };
