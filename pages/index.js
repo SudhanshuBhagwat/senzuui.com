@@ -5,7 +5,7 @@ export default function IndexPage({ layoutProps }) {
   return (
     <div className="flex flex-col items-center mt-20">
       <h1 className="text-center text-7xl font-bold">
-        <span className="text-blue-400">Supercharge</span> your Flutter
+        <span className="text-blue-600">Supercharge</span> your Flutter
         <br />
         <span>app development</span>
       </h1>
@@ -15,8 +15,8 @@ export default function IndexPage({ layoutProps }) {
         to build slick Flutter applications.
       </p>
       <div className="flex mt-6 space-x-4">
-        <Link href="#">
-          <a className="flex text-2xl font-bold justify-center items-center bg-blue-600 px-8 py-4 rounded-md text-white">
+        <Link href="/docs/installation">
+          <a className="flex text-2xl font-bold justify-center items-center bg-blue-600 hover:bg-blue-500 transition-all px-8 py-4 rounded-md text-white">
             Get Started{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
