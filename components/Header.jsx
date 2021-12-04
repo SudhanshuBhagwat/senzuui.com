@@ -4,7 +4,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center px-6 py-4">
+    <header className="flex justify-between items-center px-6 py-3 sticky top-0 shadow-sm bg-white">
       <Link href="/">
         <a>
           <Image

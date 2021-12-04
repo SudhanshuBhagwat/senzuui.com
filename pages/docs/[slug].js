@@ -4,13 +4,17 @@ import { MDXRemote } from "next-mdx-remote";
 import { format, parseISO } from "date-fns";
 import MDXComponents from "../../components/MDXComponents";
 import DocumentationLayout from "../../components/DocumentationLayout";
+import Footer from "../../components/Footer";
 
 export default function DocPage({ title, date, source }) {
   return (
-    <div className="px-4">
+    <div className="px-4 pt-4">
       <section className="prose">
         <MDXRemote {...source} components={MDXComponents} />
       </section>
+      <div className="flex justify-center items-center w-full">
+        <Footer />
+      </div>
     </div>
   );
 }
