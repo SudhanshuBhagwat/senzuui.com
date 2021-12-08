@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center px-6 py-3 sticky top-0 shadow-sm bg-white">
       <Link href="/">
-        <a>
+        <a className="inline-block">
           <Image
             src="/Logo.svg"
             alt="Senzu UI Logo"

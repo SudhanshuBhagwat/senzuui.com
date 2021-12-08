@@ -4,4 +4,137 @@ date: 2021-11-28T15:57:27.004Z
 parent: GETTING STARTED
 ---
 
+# Getting Started
+
 ## Installation
+
+Create a simple Flutter project
+
+```bash
+$ flutter create senzu_ui_example
+$ cd senzu_ui_example
+```
+
+Inside your Flutter project add the following to your dependencies
+
+```yaml
+dependencies:
+  url_launcher: ^1.0.0
+```
+
+Run
+
+```bash
+$ flutter pub get
+```
+
+## Example
+
+```dart
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import 'screens/breadcrumb.dart';
+import 'screens/headers.dart';
+import 'screens/avatars.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+const String imageURI = 'https://source.unsplash.com/random';
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Senzu UI Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: SvgPicture.asset('assets/images/logo.svg', height: 36),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            const ListTile(
+              title: Text(
+                'Components',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const Divider(),
+            ListTile(
+              title: const Text(
+                '1. Headers',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Headers()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text(
+                '2. Avatars',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Avatars()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text(
+                '3. Breadcrumbs',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Breadcrumb()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```

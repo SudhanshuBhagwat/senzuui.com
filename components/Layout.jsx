@@ -4,15 +4,15 @@ import Footer from "./Footer";
 
 const Layout = ({ children, layoutProps }) => {
   return (
-    <div className="max-w-8xl mx-auto">
-      <div className="layout">
-        <Head>
-          <title>{layoutProps.title}</title>
-        </Head>
-        <Header />
+    <div className="layout">
+      <Header />
+      <Head>
+        <title>{layoutProps.title}</title>
+      </Head>
+      <div className="max-w-8xl mx-auto grid my-auto">
         <main className="px-6">{children}</main>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };

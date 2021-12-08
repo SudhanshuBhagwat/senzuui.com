@@ -5,13 +5,13 @@ import Sidebar from "./Sidebar";
 
 const DocumentationLayout = ({ children, layoutProps, ...props }) => {
   return (
-    <div className="max-w-8xl mx-auto overflow-y-scroll">
-      <div className="layout">
-        <Head>
-          <title>{props.title}</title>
-        </Head>
-        <Header />
-        <main className="grid grid-cols-5 px-6 divide-x-2">
+    <div>
+      <Header />
+      <Head>
+        <title>{props.title}</title>
+      </Head>
+      <div className="max-w-8xl mx-auto">
+        <main className="grid grid-cols-5 px-6">
           <section
             className="col-span-1 flex flex-col overflow-y-scroll sticky top-16"
             style={{
@@ -20,7 +20,7 @@ const DocumentationLayout = ({ children, layoutProps, ...props }) => {
           >
             <Sidebar data={props.docData} />
           </section>
-          <section className="col-span-4">{children}</section>
+          <section className="ml-4 col-span-4">{children}</section>
         </main>
       </div>
     </div>
