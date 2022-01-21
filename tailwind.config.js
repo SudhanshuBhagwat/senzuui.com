@@ -1,16 +1,15 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
     extend: {
       maxWidth: {
-        "8xl": "90rem",
+        "8xl": "90rem"
       },
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-      },
-    },
+        inter: ["Inter", "sans-serif"]
+      }
+    }
   },
   variants: {},
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography")]
 };
